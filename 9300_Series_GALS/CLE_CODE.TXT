@@ -1,0 +1,87 @@
+
+                +----------------------------------+
+                ! Codage des GAL d'option CLEXXX_A !
+                +----------------------------------+
+                
+    Les options de software déterminent le type de cette GAL.
+       Elle est semblable pour tous les DSO de la série 93xx
+    (mais diff‚rente des PAL PGxxxx des DSO de la série 94xx).
+
+    Les GAL vierges sont du type  16V8A-15LP (205 750 000)
+    (éventuellement les PAL sont du type C16R6L-25PC (205 751 116))
+
+    Les options prévues sont actuellement les suivantes:
+     XXX =
+    
+     000 = STD  => Standard DSO (GAL pas nécessaire)
+
+    +001 = WP01 => Basic function package
+    +002 = WP02 => Basic FFT package
+    +004 = WP03 => Histograms package
+    +008 = DDM  => Disk Drive Mesurement
+  
+   X 010 = CKIO => Clock in and trigger out (hard CLBZ (rev. F) n‚cess.)
+    +020 = PRML => PRML (disk drive) Mesurement 
+    +040 = ORM  => Optical Recording Measurement
+    +080 = DDFA => Disk Drive Failure Analysis package
+
+    +100 = MATE => MATE remote control
+    +200 = CARD => Memory card (PCMCIA)
+    
+    
+    Elle est codée par la somme (en hexadecimal) des options soit:     
+    
+    
+    --------------------------
+    ! CARD ! MATE ! CLE*.._A !
+    --------------------------
+    !  -   !  -   ! CLE0.._A !
+    !  -   !  X   ! CLE1.._A !
+    !  X   !  -   ! CLE2.._A !
+    !  X   !  X   ! CLE3.._A !
+    --------------------------
+    
+              ---------------------------------                                    
+            ! newv ! CDRM ! PRML ! KEY.*._A !
+            ---------------------------------
+            !  -   !  -   !  -   ! KEY.0._A !
+            !  -   !  -   !  X   ! KEY.2._A !
+            !  -   !  X   !  -   ! KEY.4._A !
+            !  -   !  X   !  X   ! KEY.6._A !
+            !  X   !  -   !  -   ! KEY.8._A !
+            !  X   !  -   !  X   ! KEY.A._A !
+            !  X   !  X   !  -   ! KEY.C._A !
+            !  X   !  X   !  X   ! KEY.E._A !
+            ---------------------------------
+
+                            ----------------------------------------
+                            ! DDM  ! WP03 ! WP02 ! WP01 ! CLE..*_A !
+                            ----------------------------------------
+                            !  -   !  -   !  -   !  -   ! CLE..0_A !
+                            !  -   !  -   !  -   !  X   ! CLE..1_A !
+                            !  -   !  -   !  X   !  -   ! CLE..2_A !
+                            !  -   !  -   !  X   !  X   ! CLE..3_A !
+                            !  -   !  X   !  -   !  -   ! CLE..4_A !
+                            !  -   !  X   !  -   !  X   ! CLE..5_A !
+                            !  -   !  X   !  X   !  -   ! CLE..6_A !
+                            !  -   !  X   !  X   !  X   ! CLE..7_A !
+                            !  X   !  -   !  -   !  -   ! CLE..8_A !
+                            !  X   !  -   !  -   !  X   ! CLE..9_A !
+                            !  X   !  -   !  X   !  -   ! CLE..A_A !
+                            !  X   !  -   !  X   !  X   ! CLE..B_A !
+                            !  X   !  X   !  -   !  -   ! CLE..C_A !
+                            !  X   !  X   !  -   !  X   ! CLE..D_A !
+                            !  X   !  X   !  X   !  -   ! CLE..E_A !
+                            !  X   !  X   !  X   !  X   ! CLE..F_A !
+                            ----------------------------------------
+               
+    
+    La PAL CLEFFF_A a toutes les options (utilisée pour le developpement)
+    La PAL CLETST_A est destinées aux tests (pas d'option valable).
+    La lettre qui termine l'identification de la PAL (actuellement '_A')
+    est la revision de programmation de celle-ci.
+        
+                           LeCroy ITI Geneva  B. Mauron  11 mai 1990
+                                                     rev 2 juin 1994
+                                                     rev 20 dec 1994
+						     rev  7 dec 1995
