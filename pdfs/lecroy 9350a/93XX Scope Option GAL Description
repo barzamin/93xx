@@ -1,0 +1,28 @@
+Installing a 16V8 GAL into a 93XX scope will enable the following options:
+
+The most useful ones:
+
+WP01 - Waveform Math Package
+WP02 - FFT Processing Package
+WP03 - Statistical Math Package
+MC01 - Front Panel Memory Card R/W (SRAM CARD ONLY!)
+
+And these that are used for hard disk and optical data drives at the head read level.
+(If anyone really knows a good alternate use for these please post documents on
+the group site),
+
+CKIO is Clock I/O and enables the external hardware clock option
+on some scopes.
+
+DDM - Disk Drive Analysis
+CKIO - Clock I/O
+PRML - Partial Response Maximum Likelyhood (Disk Drive Analysis)
+ORM - Optical Recording Analysis
+DDFA - Disk Drive Failure Analysis
+
+
+SHR
+Moderator
+4-JAN-2014
+
+
